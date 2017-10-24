@@ -1,15 +1,14 @@
 
 public abstract class VirtualPet {
 
-	//Instance Variables
+	// Instance Variables
 	protected String petName;
 	protected String description;
 	protected int health;
 	protected int happiness;
 	protected int boredom;
-	
-	
-	//Constructor
+
+	// Constructor
 	public VirtualPet(String petName, String description, int health, int happiness, int boredom) {
 		super();
 		this.petName = petName;
@@ -17,21 +16,25 @@ public abstract class VirtualPet {
 		this.health = health;
 		this.happiness = happiness;
 		this.boredom = boredom;
-		
-	}
-	
-	public int getBoredom() {
-		return boredom;
+
 	}
 
-		// Tick Method
-		 public void tick() { 
-			int time = 1;
-		 health -= time;
-		 happiness -= time;
-		 
-		 }
-	//Getters
+	// Overloading Constructor
+	public VirtualPet(String petName, String description) {
+		this.petName = petName;
+		this.description = description;
+	}
+
+	// Tick Method
+	public void tick() {
+		int time = 1;
+		health -= time;
+		happiness -= time;
+		boredom += time;
+
+	}
+
+	// Getters
 	public String getName() {
 		return petName;
 	}
@@ -47,10 +50,15 @@ public abstract class VirtualPet {
 	public int getHappiness() {
 		return happiness;
 	}
-	
-	// Method of Behavior 
+
+	public int getBoredom() {
+		return boredom;
+	}
+	//
+
+	// Method of Behavior
 	public void playPet() {
-		int play = 10;
+		int play = 50;
 		happiness += play;
-}
+	}
 }

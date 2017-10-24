@@ -10,6 +10,16 @@ public class OrganicCat extends VirtualPet implements OrganicPetInterface{
 		this.boredom = boredom;
 //		this.cleanliness = cleanliness;
 	}
+	// OVERLOADED CONSTRUCTOR
+	public OrganicCat (String petName, String description) {
+		super(petName, description);
+		health = 100;
+		happiness = 100;
+		boredom = 0;
+		hunger = 0;
+		
+		
+	}
 	
 
 	public int getHunger() {
@@ -20,9 +30,9 @@ public class OrganicCat extends VirtualPet implements OrganicPetInterface{
 		health -= 2;
 	}
 	
-	/*public void healthyLitterBox() {
-		health +=2;
-	}*/
+	/*
+	 * public void healthyLitterBox() { health +=2; }
+	 */
 
 	@Override
 	public void tick() {
